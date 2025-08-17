@@ -7,25 +7,27 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <nav>
-            <a href="index.html" title="Ir a la página de inicio">
-                <img src="./img/rutina.py-logo.png" alt="Logo Rutina.py" width="32" height="32">
-            </a>
-            <a href="about.html" title="Acerca de Rutina.py">Acerca de</a>
-            <a href="tareas-mensuales.html" title="Ver Tareas del mes">Calendario Mensual</a>
+        <nav class="container py-4">
+            <div class="btn-group">
+                <a class="btn btn-primary" href="index.html" title="Ir a la página de inicio">
+                    <img src="./img/rutina.py-logo.png" alt="Logo Rutina.py" width="24" height="24"> Inicio
+                </a>
+                <a class="btn btn-primary" href="about.html" title="Acerca de Rutina.py">Acerca de</a>
+                <a class="btn btn-primary" href="tareas-mensuales.html" title="Ver Tareas del mes">Calendario Mensual</a>
+            </div>
         </nav>
-        <main>
+        <main class="container my-4">
             <header>
                 <h1>¡Bienvenido Juan!</h1>
                 <p>Completa el formulario para agregar tu tarea.</p>
             </header>
             <section>
                 <form action="">
-                    <label for="tarea">Tarea:</label>
-                    <input type="text" id="tarea" name="tarea" placeholder="Ingresa tu tarea">
+                    <label for="tarea" class="form-label">Tarea:</label>
+                    <input class="form-control" type="text" id="tarea" name="tarea" placeholder="Ingresa tu tarea">
                     <br>
-                    <label for="categoria">Categoría:</label>
-                    <select id="categoria" name="categoria">
+                    <label class="form-label" for="categoria">Categoría:</label>
+                    <select id="categoria" class="form-control" name="categoria">
                         <option value="Facturas">Facturas</option>
                         <option value="Hogar">Hogar</option>
                         <option value="Limpieza">Limpieza</option>
@@ -33,10 +35,10 @@
                         <option value="Otras">Otras</option>
                     </select>
                     <br>
-                    <label for="fecha">Fecha:</label>
-                    <input type="date" id="fecha" name="fecha">
+                    <label class="form-label" for="fecha">Fecha:</label>
+                    <input class="form-control" type="date" id="fecha" name="fecha">
                     <br>
-                    <button type="submit">Crear Tarea</button>
+                    <button type="submit" class="btn btn-primary">Crear Tarea</button>
                 </form>
             </section>
             <footer>
