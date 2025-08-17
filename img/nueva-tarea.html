@@ -19,20 +19,22 @@
                 <p>Estas son tus tareas del día.</p>
             </header>
             <section>
-                <h2>Tareas por hacer</h2>
-                <ol>
-                    <li>Pasear a mis perros</li>
-                    <li>Hacer de desayunar</li>
-                    <li>Limpiar la cocina</li>
-                </ol>
-            </section>
-            <section>
-                <h2>Tareas realizadas</h2>
-                <ul>
-                    <li>Bañarme</li>
-                    <li>Pagar la factura del gas</li>
-                    <li>Tirar la basura</li>
-                </ul>
+                <form action="">
+                    <label for="tarea">Tarea:</label>
+                    <input type="text" id="tarea" name="tarea" placeholder="Ingresa tu tarea">
+                    <br>
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria">
+                        <option value="Facturas">Facturas</option>
+                        <option value="Hogar">Hogar</option>
+                        <option value="Otras">Otras</option>
+                    </select>
+                    <br>
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha" placeholder="Ingresa la fecha">
+                    <br>
+                    <button type="submit">Guardar</button>
+                </form>
             </section>
             <footer>
                 <p>© EBAC | IT Start, 2025 Rutina.py</p>
