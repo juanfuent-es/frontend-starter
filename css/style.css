@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    /* Así se define color y background */
+    /*
+    Esto es blanco: 
+    rgb(255,255,255;
+    white;
+    */
+    background-color: lightblue;
+    color: #000;
+    /* background-image: url("../img/rutina.py-logo.png");
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+header {
+    text-align: center;
+    color: purple;
+}
+
+p {
+    font-size: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Archivo Black", sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+li {
+    color: rebeccapurple;
+}
+
+.tarea-realizada {
+    text-decoration: line-through;
+}
+
+#siguiente-tarea {
+    color: green;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.tarea-realizada strong {
+    color: red;
+}
+
+.tarea-factura {
+    opacity: 0.5;
+}
+
+.tarea-factura.tarea-realizada {
+    color: #000;
+}

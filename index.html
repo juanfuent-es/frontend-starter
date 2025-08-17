@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>EBAC - Frontend Starter</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <nav>
@@ -15,17 +15,21 @@
             <a href="tareas-mensuales.html" title="Ver Tareas del mes">Calendario Mensual</a>
         </nav>
         <main>
+            <!-- esto es un comentario -->
             <header>
                 <h1>¡Bienvenido Juan!</h1>
-                <p>Estas son tus tareas del día.</p>
+                <p>Estas son tus <strong>tareas del día</strong>.</p>
             </header>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p>Sint dolorem porro recusandae dolorum libero dolor quas soluta corrupti deleniti earum, corporis fugiat id optio reiciendis tempora tenetur beatae.</p>
+            <p>Vel, ad! Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <section>
                 <h2>Tareas por hacer</h2>
                 <a href="nueva-tarea.html" title="Nueva tarea">
                     Agregar nueva tarea
                 </a>
                 <ol>
-                    <li>Pasear a mis perros</li>
+                    <li id="siguiente-tarea">Pasear a mis perros</li>
                     <li>Hacer de desayunar</li>
                     <li>Limpiar la cocina</li>
                 </ol>
@@ -33,9 +37,9 @@
             <section>
                 <h2>Tareas realizadas</h2>
                 <ul>
-                    <li>Bañarme</li>
-                    <li>Pagar la factura del gas</li>
-                    <li>Tirar la basura</li>
+                    <li class="tarea-realizada">Bañarme</li>
+                    <li class="tarea-realizada tarea-factura">Pagar la <strong>factura del gas</strong></li>
+                    <li class="tarea-realizada">Tirar la basura</li>
                 </ul>
             </section>
             <footer>
