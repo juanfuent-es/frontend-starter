@@ -12,60 +12,66 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
     font-weight: 400;
-    /* Así se define color y background */
-    /*
-    Esto es blanco: 
-    rgb(255,255,255;
-    white;
-    */
     background-color: lightblue;
     color: #000;
-    /* background-image: url("../img/rutina.py-logo.png");
-    background-repeat: no-repeat;
-    background-position: center; */
 }
 
 header {
     text-align: center;
 }
 
-p {
-    font-size: 18px;
-}
-
-h1, h2 {
+h1,
+h2 {
     font-family: "Archivo Black", sans-serif;
     text-transform: uppercase;
     font-weight: 800;
 }
 
-li {
-    color: rebeccapurple;
+/* modo oscuro */
+body.modo-oscuro {
+    background: #181a1b !important;
+    color: #f1f1f1 !important;
 }
 
-.tarea-realizada {
-    text-decoration: line-through;
+body.modo-oscuro .card,
+body.modo-oscuro .modal-content,
+body.modo-oscuro .table,
+body.modo-oscuro .accordion-body {
+    background: #23272b !important;
+    color: #f1f1f1 !important;
 }
 
-a.link {
-    padding: .25em 1em;
-    border: 2px solid currentColor;
+body.modo-oscuro .navbar,
+body.modo-oscuro .bg-primary,
+body.modo-oscuro footer.bg-primary {
+    background: #222b3a !important;
 }
 
-#siguiente-tarea {
-    color: green;
-    text-transform: uppercase;
-    font-weight: bold;
+body.modo-oscuro .list-group-item {
+    background: #23272b !important;
+    color: #f1f1f1 !important;
 }
 
-.tarea-realizada strong {
-    color: red;
+body.modo-oscuro .form-control,
+body.modo-oscuro .form-select {
+    background: #23272b !important;
+    color: #f1f1f1 !important;
+    border-color: #444c56;
 }
 
-.tarea-factura {
-    opacity: 0.5;
+body.modo-oscuro .alert-info {
+    background: #23272b;
+    color: #f1f1f1;
+    border-color: #444c56;
 }
 
-.tarea-factura.tarea-realizada {
-    color: #000;
+body.modo-oscuro .alert-success {
+    background: #1e2b1e;
+    color: #d4edda;
+    border-color: #155724;
+}
+
+body.modo-oscuro .table-primary {
+    background: #23272b !important;
+    color: #f1f1f1 !important;
 }
