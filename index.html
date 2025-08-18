@@ -3,16 +3,31 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rutina.py - ToDo List</title>
+    <title>Rutina.py - Tu gestor de tareas</title>
+    <!--
+      Referencias útiles para este archivo:
+      - Bootstrap 5: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+      - Bootstrap Icons: https://icons.getbootstrap.com/
+      - Ejemplo de modales: https://getbootstrap.com/docs/5.3/components/modal/
+      - Ejemplo de cards: https://getbootstrap.com/docs/5.3/components/card/
+      - Ejemplo de listas: https://getbootstrap.com/docs/5.3/components/list-group/
+    -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body class="d-flex flex-column min-vh-100">
-    <!-- Header con menú hamburguesa -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <body class="d-flex flex-column min-vh-100 bg-light">
+    <!--
+      HEADER PRINCIPAL
+      Navbar responsivo con menú hamburguesa y enlaces de navegación.
+      Documentación: https://getbootstrap.com/docs/5.3/components/navbar/
+      Tag: #navbar-principal
+    -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" id="navbar-principal">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="./img/rutina.py-logo-white.png" alt="Logo Rutina.py" width="30" height="30" class="me-2">Rutina.py
+          <img src="./img/rutina.py-logo-white.png" alt="Logo Rutina.py" width="32" height="32" class="me-2">
+          <span class="fw-bold">Rutina.py</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -20,88 +35,180 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-door-fill me-1"></i>Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Acerca de</a>
+              <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i>Acerca de</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="tareas-mensuales.html">Calendario Mensual</a>
+              <a class="nav-link" href="tareas-mensuales.html"><i class="bi bi-calendar3 me-1"></i>Calendario Mensual</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <main class="container my-5 flex-grow-1">
-      <header class="mb-4 text-center">
-        <h1 class="display-5">¡Bienvenido Juan!</h1>
-        <p class="lead">Estas son tus tareas del día.</p>
+      <!--
+        HEADER DE LA VISTA PRINCIPAL
+        Mensaje de bienvenida y motivación.
+        Tag: #header-bienvenida
+      -->
+      <header class="mb-5 text-center" id="header-bienvenida">
+        <h1 class="display-4 fw-bold">¡Hola, Juan!</h1>
+        <p class="lead">Organiza tu día y alcanza tus metas.
+          <span class="text-primary fw-semibold">¡Tú puedes lograrlo!</span></p>
       </header>
-      <div class="row g-4">
-        <!-- Tareas por hacer -->
-        <section class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100">
+      <div class="row g-4 justify-content-center">
+        <!--
+          CARD: TAREAS PENDIENTES
+          Lista de tareas por hacer, con badges de prioridad y botón para agregar nueva tarea.
+          Tag: #card-tareas-pendientes
+        -->
+        <section class="col-12 col-md-6 col-lg-4" id="card-tareas-pendientes">
+          <div class="card border-0 shadow h-100">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h2 class="h5 mb-0">Tareas por hacer</h2>
-                <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalNuevaTarea">
+                <div>
+                  <h2 class="h5 mb-0"><i class="bi bi-list-task me-2 text-primary"></i>Tareas pendientes</h2>
+                  <small class="text-muted">Prioriza y mantente enfocado</small>
+                </div>
+                <!-- Botón para abrir el modal de nueva tarea -->
+                <button class="btn btn-success btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#modalNuevaTarea" title="Agregar nueva tarea">
                   <i class="bi bi-plus-lg"></i>
-                  Nueva
                 </button>
               </div>
+              <!-- Lista de tareas pendientes -->
               <ul class="list-group list-group-flush mb-3">
-                <li class="list-group-item">Pasear a mis perros</li>
-                <li class="list-group-item">Hacer de desayunar</li>
-                <li class="list-group-item">Limpiar la cocina</li>
+                <!-- Ejemplo de tarea pendiente con botón para marcar como completada -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-chevron-right text-primary me-2"></i>Pasear a mis perros</span>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-warning text-dark">Alta</span>
+                    <!-- Botón para marcar como completada -->
+                    <button class="btn btn-outline-success btn-sm rounded-circle" title="Marcar como completada">
+                      <i class="bi bi-check-lg"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-chevron-right text-primary me-2"></i>Hacer de desayunar</span>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-info text-dark">Media</span>
+                    <button class="btn btn-outline-success btn-sm rounded-circle" title="Marcar como completada">
+                      <i class="bi bi-check-lg"></i>
+                    </button>
+                  </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-chevron-right text-primary me-2"></i>Limpiar la cocina</span>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-secondary">Baja</span>
+                    <button class="btn btn-outline-success btn-sm rounded-circle" title="Marcar como completada">
+                      <i class="bi bi-check-lg"></i>
+                    </button>
+                  </div>
+                </li>
               </ul>
+              <!-- Mensaje motivacional -->
+              <div class="alert alert-info py-2 mb-0" role="alert">
+                <i class="bi bi-lightbulb me-1"></i>
+                Consejo: ¡Completa primero las tareas de mayor prioridad!
+              </div>
             </div>
           </div>
         </section>
-        <!-- Tareas realizadas -->
-        <section class="col-12 col-md-6 col-lg-4">
-          <div class="card h-100">
+        <!--
+          CARD: TAREAS COMPLETADAS
+          Lista de tareas realizadas, con iconos y mensaje de felicitación.
+          Tag: #card-tareas-completadas
+        -->
+        <section class="col-12 col-md-6 col-lg-4" id="card-tareas-completadas">
+          <div class="card border-0 shadow h-100">
             <div class="card-body">
-              <h2 class="h5">Tareas realizadas</h2>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item text-decoration-line-through text-muted">Bañarme</li>
-                <li class="list-group-item text-decoration-line-through text-muted">Pagar la
-                  <strong>factura del gas</strong></li>
-                <li class="list-group-item text-decoration-line-through text-muted">Tirar la basura</li>
+              <h2 class="h5 mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Tareas completadas</h2>
+              <small class="text-muted">¡Felicidades! Estas tareas ya están hechas</small>
+              <ul class="list-group list-group-flush my-3">
+                <li class="list-group-item d-flex align-items-center text-muted text-decoration-line-through">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>Bañarme
+                </li>
+                <li class="list-group-item d-flex align-items-center text-muted text-decoration-line-through">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>Pagar la
+                  <strong>factura del gas</strong>
+                </li>
+                <li class="list-group-item d-flex align-items-center text-muted text-decoration-line-through">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>Tirar la basura
+                </li>
               </ul>
+              <div class="alert alert-success py-2 mb-0" role="alert">
+                <i class="bi bi-emoji-smile me-1"></i>
+                ¡Sigue así, vas por buen camino!
+              </div>
             </div>
           </div>
         </section>
-        <!-- Tareas de Agosto (opcional, puedes eliminar si no es necesario) -->
-        <section class="col-12 col-lg-4">
-          <div class="card h-100">
+        <!--
+          CARD: TAREAS DEL MES
+          Lista de tareas mensuales, con badges de estado.
+          Tag: #card-tareas-mes
+        -->
+        <section class="col-12 col-lg-4" id="card-tareas-mes">
+          <div class="card border-0 shadow h-100">
             <div class="card-body">
-              <h2 class="h5">Tareas de Agosto</h2>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item text-decoration-line-through text-muted">Pagar Luz</li>
-                <li class="list-group-item text-decoration-line-through text-muted">Comprar despensa</li>
-                <li class="list-group-item">Pagar el Internet</li>
+              <h2 class="h5 mb-2"><i class="bi bi-calendar-event text-primary me-2"></i>Tareas de Agosto</h2>
+              <small class="text-muted">Objetivos mensuales</small>
+              <ul class="list-group list-group-flush my-3">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span class="text-decoration-line-through text-muted"><i class="bi bi-check-circle-fill text-success me-2"></i>Pagar Luz</span>
+                  <span class="badge bg-success">Hecho</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span class="text-decoration-line-through text-muted"><i class="bi bi-check-circle-fill text-success me-2"></i>Comprar despensa</span>
+                  <span class="badge bg-success">Hecho</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-chevron-right text-primary me-2"></i>Pagar el Internet</span>
+                  <span class="badge bg-warning text-dark">Pendiente</span>
+                </li>
               </ul>
+              <div class="alert alert-primary py-2 mb-0" role="alert">
+                <i class="bi bi-calendar-check me-1"></i>
+                ¡No olvides revisar tus metas mensuales!
+              </div>
             </div>
           </div>
         </section>
       </div>
-      <!-- Modal para nueva tarea -->
+      <!--
+        MODAL: NUEVA TAREA
+        Formulario para agregar una nueva tarea.
+        Tag: #modal-nueva-tarea
+        Documentación: https://getbootstrap.com/docs/5.3/components/modal/
+      -->
       <div class="modal fade" id="modalNuevaTarea" tabindex="-1" aria-labelledby="modalNuevaTareaLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalNuevaTareaLabel">Agregar nueva tarea</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            <div class="modal-header bg-primary text-white">
+              <h5 class="modal-title" id="modalNuevaTareaLabel"><i class="bi bi-plus-circle me-2"></i>Agregar nueva tarea</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
             <div class="modal-body">
               <form>
                 <div class="mb-3">
-                  <label for="nombreTarea" class="form-label">Nombre de la tarea</label>
-                  <input type="text" class="form-control" id="nombreTarea" placeholder="Ej. Lavar ropa">
+                  <label for="nombreTarea" class="form-label">Nombre de la tarea
+                    <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="nombreTarea" placeholder="Ej. Lavar ropa" required>
                 </div>
                 <div class="mb-3">
                   <label for="categoriaTarea" class="form-label">Categoría</label>
-                  <input type="text" class="form-control" id="categoriaTarea" placeholder="Ej. Hogar, Trabajo">
+                  <!-- Select de categorías predefinidas -->
+                  <select class="form-select" id="categoriaTarea">
+                    <option value="">Selecciona categoría</option>
+                    <option value="hogar">Hogar</option>
+                    <option value="trabajo">Trabajo</option>
+                    <option value="personal">Personal</option>
+                    <option value="estudio">Estudio</option>
+                    <option value="otro">Otro</option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <label for="fechaTarea" class="form-label">Fecha</label>
@@ -126,11 +233,30 @@
         </div>
       </div>
     </main>
-    <footer class="bg-primary text-white text-center py-3 mt-auto">
+    <!--
+      FOOTER PRINCIPAL
+      Incluye enlaces de referencia y derechos de autor.
+      Tag: #footer-principal
+    -->
+    <footer class="bg-primary text-white text-center py-4 mt-auto shadow-sm" id="footer-principal">
       <div class="container">
-        <small>© EBAC | IT Start, 2025 Rutina.py</small>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <div class="mb-2 mb-md-0">
+            <small>© EBAC | IT Start, 2025 Rutina.py</small>
+          </div>
+          <div>
+            <a href="about.html" class="text-white text-decoration-none me-3"><i class="bi bi-info-circle"></i>
+              Acerca de</a>
+            <a href="tareas-mensuales.html" class="text-white text-decoration-none"><i class="bi bi-calendar3"></i>
+              Calendario Mensual</a>
+          </div>
+        </div>
       </div>
     </footer>
+    <!--
+      Scripts de Bootstrap
+      Documentación: https://getbootstrap.com/docs/5.3/getting-started/introduction/#js
+    -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
