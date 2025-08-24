@@ -1,6 +1,7 @@
 # Pseudocódigo
 
 **Estructura Básica**
+```
 INICIO
     LEEER dato
     ESCRIBIR mensaje
@@ -11,14 +12,16 @@ INICIO
     MIENTRAS condición
         acción repetida
 FIN
-
+```
 **Variables & Asignaciones**
+```
 totalTareas = 10
 prioridad = "alta"
 PI = 3.14
-
+```
 **Control de flujo**
 
+```
 SI edad >= 18 ENTONCES
     ESCRIBIR "Puedes votar"
 SINO
@@ -31,3 +34,4 @@ MIENTRAS existan tareas dentro de la lista
 PARA i <-- 1 hasta 10
     ESCRIBIR i
     i+= 2
+```
